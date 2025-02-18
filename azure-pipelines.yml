@@ -22,3 +22,6 @@ steps:
 
 - script: npm install --legacy-peer-deps
   displayName: 'Install dependencies'
+
+- script: npm install env-cmd --save-dev
+  displayName: 'Install env-cmd'
