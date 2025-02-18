@@ -14,13 +14,15 @@ steps:
   displayName: 'Install Node.js'
 
 # Fix: Erst alle Dependencies installieren (mit --legacy-peer-deps, um Konflikte zu vermeiden)
-- script: npm install --legacy-peer-deps
-  displayName: 'Install dependencies with legacy-peer-deps'
+#- script: npm install --legacy-peer-deps
+#  displayName: 'Install dependencies with legacy-peer-deps'
 
 # Fix: `env-cmd` erst nach erfolgreicher Installation der Dependencies installieren
-- script: npm install env-cmd --save-dev --legacy-peer-deps
-  displayName: 'Install env-cmd'
+#- script: npm install env-cmd --save-dev --legacy-peer-deps
+#  displayName: 'Install env-cmd'
 
 # Jetzt erst das Build starten
-- script: npm run build
-  displayName: 'Build project'
+- script:
+    npm install
+    npm run build
+  displayName: 'npm install and build project'
